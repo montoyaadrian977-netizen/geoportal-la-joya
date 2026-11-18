@@ -349,3 +349,80 @@ header, #dashboard, footer {
     }
 
 }
+/* OPTIMIZACIÓN PARA CELULARES */
+
+@media screen and (max-width: 900px) {
+
+    html, body {
+        width: 100%;
+        height: auto !important;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    body {
+        display: block !important;
+    }
+
+    header {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+    }
+
+    #dashboard {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .indicador {
+        min-width: 0;
+        padding: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .indicador h2 {
+        font-size: 19px;
+    }
+
+    #contenido {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        height: auto !important;
+    }
+
+    #mapa {
+        grid-row: 1;
+        width: 100% !important;
+        height: 55vh !important;
+        min-height: 320px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #panel-estadistico {
+        grid-row: 2;
+        width: 100% !important;
+        min-width: 0;
+        height: auto !important;
+        padding: 15px;
+        overflow: visible;
+    }
+
+    #panel-estadistico canvas {
+        display: block;
+        max-width: 100% !important;
+    }
+
+    .leaflet-control-layers {
+        max-width: 75vw;
+        font-size: 11px;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
