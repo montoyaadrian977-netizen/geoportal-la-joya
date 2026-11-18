@@ -46,7 +46,7 @@ const controlCapas = L.control.layers({
     "Mapa de calles": calles
 
 }, {}, {
-    collapsed: false
+collapsed: window.innerWidth <= 768
 }).addTo(mapa);
 
 L.control.scale({
