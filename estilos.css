@@ -1,0 +1,260 @@
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #101820;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* ENCABEZADO DEL GEOPORTAL */
+
+header {
+    background: #102b3f;
+    color: white;
+    padding: 18px 25px;
+    border-bottom: 3px solid #26a69a;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #b9d9e8;
+    font-size: 14px;
+}
+
+/* MAPA INTERACTIVO */
+
+#mapa {
+    width: 100%;
+    flex: 1;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: #102b3f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* CONTROL DE CAPAS */
+
+.leaflet-control-layers {
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 12px;
+}
+
+/* VENTANAS EMERGENTES */
+
+.leaflet-popup-content {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.leaflet-popup-content h3 {
+    color: #102b3f;
+    border-bottom: 2px solid #26a69a;
+    padding-bottom: 8px;
+}
+/* DASHBOARD AMBIENTAL */
+
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    padding: 15px;
+    background: #e9eff5;
+}
+
+.indicador {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #26a69a;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.indicador h3 {
+    font-size: 13px;
+    color: #607d8b;
+    margin: 0;
+}
+
+.indicador h2 {
+    font-size: 28px;
+    color: #102b3f;
+    margin: 10px 0 0;
+}
+/* PANEL ESTADÍSTICO Y MAPA */
+
+#contenido {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+#panel-estadistico {
+    width: 300px;
+    flex-shrink: 0;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 2px solid #dce4eb;
+    overflow-y: auto;
+}
+
+#panel-estadistico h2 {
+    font-size: 18px;
+    color: #102b3f;
+    margin-bottom: 25px;
+}
+
+#graficoMonitoreos {
+    max-width: 100%;
+}
+
+#mapa {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    min-height: 0;
+}
+
+header, #dashboard, footer {
+    flex-shrink: 0;
+}
+/* GEOLOCALIZACION GPS */
+
+#resultadoGPS {
+    background: #edf5fc;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #102b3f;
+}
+/* HERRAMIENTAS DE MEDICION */
+
+#resultadoMedicion {
+    background: #fff5df;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ff9800;
+    color: #102b3f;
+    font-size: 14px;
+    line-height: 1.8;
+}
+/* DESACTIVAR CONSULTAS DURANTE LA MEDICIÓN */
+
+#mapa.modo-medicion .leaflet-overlay-pane .leaflet-interactive,
+#mapa.modo-medicion .leaflet-marker-pane .leaflet-interactive {
+    pointer-events: none !important;
+}
+
+#mapa.modo-medicion {
+    cursor: crosshair !important;
+}
+/* HERRAMIENTAS DEL PANEL LATERAL */
+
+#panel-estadistico button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #102b3f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#panel-estadistico button:hover {
+    background: #26a69a;
+}
+
+#panel-estadistico input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccd5dd;
+    border-radius: 6px;
+}
+
+#resultadoBuffer {
+    background: #e8f5e9;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #102b3f;
+}
+/* CORREGIR CURSOR DEL BUFFER */
+
+#mapa.modo-medicion,
+#mapa.modo-medicion * {
+    cursor: crosshair !important;
+}
+
+#mapa.modo-medicion .leaflet-interactive {
+    pointer-events: none !important;
+}
+/* FILTROS AMBIENTALES */
+
+#panel-estadistico select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccd5dd;
+    border-radius: 6px;
+    background: white;
+    color: #102b3f;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#resultadoSensibilidad {
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #102b3f;
+}
+/* SELECTOR DE CAPAS CARTOGRÁFICAS */
+
+.leaflet-control-layers {
+    background: rgba(255, 255, 255, 0.97);
+    border: none !important;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    font-size: 13px;
+}
+
+.leaflet-control-layers label {
+    padding: 4px 0;
+    color: #102b3f;
+}
+
+.leaflet-control-layers-separator {
+    margin: 10px 0;
+}
+
+.leaflet-control-layers input {
+    accent-color: #168C83;
+}

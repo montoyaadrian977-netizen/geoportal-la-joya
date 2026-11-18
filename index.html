@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geoportal Ambiental - Joya del Oriente II</title>
+
+    <!-- Librería Leaflet -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>GEOPORTAL AMBIENTAL</h1>
+        <p>Concesión minera JOYA DEL ORIENTE II | Código 501381</p>
+    </header>
+
+    <!-- Mapa interactivo -->
+     <section id="dashboard">
+
+    <div class="indicador">
+        <h3>Superficie de concesión</h3>
+        <h2 id="superficie-concesion">-- ha</h2>
+    </div>
+
+    <div class="indicador">
+        <h3>Área de implantación</h3>
+        <h2 id="superficie-implantacion">-- ha</h2>
+    </div>
+
+    <div class="indicador">
+        <h3>Monitoreo de agua</h3>
+        <h2 id="total-agua">--</h2>
+    </div>
+
+    <div class="indicador">
+        <h3>Monitoreo de aire</h3>
+        <h2 id="total-aire">--</h2>
+    </div>
+
+    <div class="indicador">
+        <h3>Monitoreo de suelo</h3>
+        <h2 id="total-suelo">--</h2>
+    </div>
+
+    <div class="indicador">
+        <h3>Monitoreo de ruido</h3>
+        <h2 id="total-ruido">--</h2>
+    </div>
+
+</section>
+    <main id="contenido">
+
+    <aside id="panel-estadistico">
+
+        <h2>Estadísticas ambientales</h2>
+
+        <canvas id="graficoMonitoreos"></canvas>
+        <hr>
+
+<h2>Geolocalización GPS</h2>
+
+<button id="miUbicacion">📍 Mi ubicación</button>
+
+<button id="limpiarUbicacion">Limpiar ubicación</button>
+
+<div id="resultadoGPS"></div>
+
+   <hr>
+
+<h2>Herramientas de medición</h2>
+
+<button id="medirDistancia">Medir distancia</button>
+
+<button id="medirSuperficie">Medir superficie</button>
+
+<button id="finalizarMedicion">Finalizar medición</button>
+
+<button id="deshacerMedicion">Deshacer último punto</button>
+
+<button id="limpiarMedicion">Limpiar medición</button>
+
+<div id="resultadoMedicion"></div>
+<hr>
+
+<h2>Análisis espacial</h2>
+
+<label>Distancia del buffer (metros)</label>
+
+<input type="number" id="distanciaBuffer" value="100" min="1">
+
+<button id="crearBuffer">Generar buffer</button>
+
+<button id="limpiarBuffer">Limpiar análisis</button>
+
+<div id="resultadoBuffer"></div>
+<hr>
+
+<h2>Filtros ambientales</h2>
+
+<label>Sensibilidad biótica</label>
+
+<select id="filtroSensibilidad">
+
+    <option value="">Todas las categorías</option>
+
+</select>
+
+<p id="resultadoSensibilidad"></p>
+<h2>Distribución de sensibilidad biótica</h2>
+
+<canvas id="graficoSensibilidad"></canvas>
+</aside>
+
+    <div id="mapa"></div>
+
+</main>
+
+<footer>
+    CC Consultores | Tecnología Geoespacial
+</footer>
+
+<!-- LIBRERÍAS EXTERNAS -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.js"></script>
+
+<!-- FUNCIONALIDADES DEL GEOPORTAL -->
+
+<script src="mapa.js"></script>
+
+<script src="dashboard.js"></script>
+
+<script src="analisis.js"></script>
+
+<script src="ubicacion.js"></script>
+
+<script src="medicion.js"></script>
+
+</body>
+</html>
